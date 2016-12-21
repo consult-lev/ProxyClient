@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication(scanBasePackages = "ru.app")
 @EnableZuulProxy
@@ -21,4 +22,10 @@ public class ProxyClientAppWebApplication implements CommandLineRunner {
 	public void run(String... arg0) throws Exception {
 		logger.info("Server is ready to work.");
 	}
+
+	@Bean
+	public SessionSetZuulPreFilter sessionSetZuulPreFilter() {
+		return new SessionSetZuulPreFilter();
+	}
+
 }

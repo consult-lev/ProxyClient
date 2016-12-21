@@ -11,10 +11,10 @@
 </head>
 <body>
 	<script type="text/javascript">
-		ROOT_URL = "http://localhost:8082";
+		
 		$.ajax({
 			type : "GET",
-			url : ROOT_URL + "/admin/user/list/",
+			url : "/admin/user/list/",
 			contentType : "application/json",
 			success : function(data) {
 				console.log(data);
@@ -26,6 +26,7 @@
 			}
 		});
 	</script>
+	Proxy client
 	<div id="data"></div>
 </body>
 </html>
