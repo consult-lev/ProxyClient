@@ -35,7 +35,8 @@ public class SessionSetZuulPreFilter extends ZuulFilter {
 		HttpServletRequest request = ctx.getRequest();
 
 		log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-
+		request.getHeader("Cookie");
+		ctx.addZuulRequestHeader("Cookie", request.getHeader("Cookie"));
 		return null;
 	}
 	//
