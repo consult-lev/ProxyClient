@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<File name="FILE" fileName="logs/log-${date:yyyy-MM-dd}.log" append="true">
+			<PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %-5level %C (%F:%L) - %m%n" />
+		</File>
+		<File name="BUSINESS" fileName="logs/logbusines-${date:yyyy-MM-dd}.log" append="true">
+			<PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %-5level %C (%F:%L) - %m%n" />
+		</File>
+		<File name="API" fileName="logs/logapi-${date:yyyy-MM-dd}.log" append="true">
+			<PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %-5level %C (%F:%L) - %m%n" />
+		</File>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="FILE" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
