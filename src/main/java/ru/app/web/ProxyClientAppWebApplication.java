@@ -28,4 +28,9 @@ public class ProxyClientAppWebApplication implements CommandLineRunner {
 		return new SessionSetZuulPreFilter();
 	}
 
+	@Bean
+	public ZuulPostFilter zuulPostFilter() {
+		return new ZuulPostFilter();
+	}
+
 }
